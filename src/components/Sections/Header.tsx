@@ -1,4 +1,4 @@
-import {Dialog, Transition} from '@headlessui/react';
+import {Dialog, DialogBackdrop, DialogPanel, Transition, TransitionChild} from '@headlessui/react';
 import {MenuAlt3Icon} from '@heroicons/react/outline';
 import classNames from 'classnames';
 import Link from 'next/link';
@@ -75,9 +75,9 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
           <MenuAlt3Icon className="h-8 w-8 text-white" />
           <span className="sr-only">Open sidebar</span>
         </button>
-        <Transition.Root as={Fragment} show={isOpen}>
+        <Transition as={Fragment} show={isOpen}>
           <Dialog as="div" className="fixed inset-0 z-40 flex sm:hidden" onClose={toggleOpen}>
-            <Transition.Child
+            <TransitionChild
               as={Fragment}
               enter="transition-opacity ease-linear duration-300"
               enterFrom="opacity-0"
@@ -85,9 +85,9 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
               leave="transition-opacity ease-linear duration-300"
               leaveFrom="opacity-100"
               leaveTo="opacity-0">
-              <Dialog.Overlay className="fixed inset-0 bg-stone-900 bg-opacity-75" />
-            </Transition.Child>
-            <Transition.Child
+              <DialogBackdrop className="fixed inset-0 bg-stone-900 bg-opacity-75" />
+            </TransitionChild>
+            <TransitionChild
               as={Fragment}
               enter="transition ease-in-out duration-300 transform"
               enterFrom="-translate-x-full"
@@ -95,7 +95,7 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
               leave="transition ease-in-out duration-300 transform"
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full">
-              <div className="relative w-4/5 bg-stone-800">
+              <DialogPanel className="relative w-4/5 bg-stone-800">
                 <nav className="mt-5 flex flex-col gap-y-2 px-2">
                   {navSections.map(section => (
                     <NavItem
@@ -108,10 +108,10 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
                     />
                   ))}
                 </nav>
-              </div>
-            </Transition.Child>
+              </DialogPanel>
+            </TransitionChild>
           </Dialog>
-        </Transition.Root>
+        </Transition>
       </>
     );
   },
@@ -125,10 +125,8 @@ const NavItem: FC<{
   onClick?: () => void;
 }> = memo(({section, current, inactiveClass, activeClass, onClick}) => {
   return (
-    <Link href={`/#${section}`} passHref>
-      <a className={classNames(current ? activeClass : inactiveClass)} key={section} onClick={onClick}>
-        {section}
-      </a>
+    <Link className={classNames(current ? activeClass : inactiveClass)} href={`/#${section}`} onClick={onClick}>
+      {section}
     </Link>
   );
 });

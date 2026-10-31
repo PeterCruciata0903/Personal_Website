@@ -1,21 +1,12 @@
-import {
-  AcademicCapIcon,
-  CalendarIcon,
-  DownloadIcon,
-  FlagIcon,
-  MapIcon,
-  SparklesIcon,
-} from '@heroicons/react/outline';
+import {AcademicCapIcon, CalendarIcon, DownloadIcon, MapIcon, SparklesIcon} from '@heroicons/react/outline';
 
+import {assetPath} from '../config';
 import GithubIcon from '../components/Icon/GithubIcon';
-//import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-//import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
-import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
+import porfolioImage1 from '../images/portfolio/ITA-ENG.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
 import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-//import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 
 import {
@@ -36,7 +27,8 @@ import {
  */
 export const homePageMeta: HomepageMeta = {
   title: 'Peter Cruciata Personal Website',
-  description: "Example site",
+  description:
+    'Peter Cruciata is an operations and technology professional focused on data, automation, and process optimization.',
 };
 
 /**
@@ -62,18 +54,14 @@ export const heroData: Hero = {
   imageSrc: heroImage,
   name: `I'm Peter Cruciata.`,
   description: (
-    <>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a New York based Computer Science student at the CUNY College of Staten Island. My main interests include Cyber Security, Game Development, and Software Engineering.
-      </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, I enjoy playing video games, reading books, and playing soccer. I also enjoy playing chess and learning about Greek and Norse mythology.
-      </p>
-    </>
+    <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
+      I'm a data-driven operations and technology professional who builds scalable workflows, improves efficiency, and
+      reduces risk across financial markets.
+    </p>
   ),
   actions: [
     {
-      href: "/resume.pdf",
+      href: assetPath('/resume.pdf'),
       text: 'Resume',
       primary: true,
       Icon: DownloadIcon,
@@ -90,14 +78,13 @@ export const heroData: Hero = {
  * About section
  */
 export const aboutData: About = {
-  //profileImageSrc: profilepic,
-  description: 'I am Peter Cruciata, I am currently a senior at the CUNY College of Staten Island and I am majoring in Computer Science. My main interests include Cyber Security, Game Development, and Software Engineering. My favorite programming language is C#. I am currently looking for a job in the Cyber Security field.',
+  description:
+    'I work at the intersection of business, technology, and financial markets, translating operational needs into data-driven tools and workflows. At Millennium Management, I have built automation and reporting solutions that improve accuracy, reduce operational risk, and support better decision-making.',
   aboutItems: [
-    {label: 'Location', text: 'Staten Island, NY', Icon: MapIcon},
-    {label: 'Age', text: '25', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'American / Italian', Icon: FlagIcon},
-    {label: 'Interests', text: 'Soccer, Books, Games', Icon: SparklesIcon},
-    {label: 'Study', text: 'CUNY College of Staten Island', Icon: AcademicCapIcon},
+    {label: 'Location', text: 'New York, NY', Icon: MapIcon},
+    {label: 'Role', text: 'Operations Control Specialist', Icon: CalendarIcon},
+    {label: 'Education', text: 'B.S. in Computer Science and Biology', Icon: AcademicCapIcon},
+    {label: 'Focus', text: 'Data, automation, and process optimization', Icon: SparklesIcon},
   ],
 };
 
@@ -106,55 +93,28 @@ export const aboutData: About = {
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Spoken languages',
+    name: 'Programming',
+    skills: [{name: 'Python'}, {name: 'SQL'}, {name: 'HTML'}, {name: 'CSS'}],
+  },
+  {
+    name: 'Data & Analytics',
     skills: [
-      {
-        name: 'English',
-        level: 10,
-      },
-      {
-        name: 'Italian',
-        level: 4,
-      },
+      {name: 'Jupyter Notebook'},
+      {name: 'Microsoft SQL Server'},
+      {name: 'DataGrip'},
+      {name: 'Alteryx'},
+      {name: 'Tableau'},
     ],
   },
   {
-    name: 'Computer languages',
+    name: 'Tools',
     skills: [
-      {
-        name: 'C#',
-        level: 9,
-      },
-      {
-        name: 'Java',
-        level: 7,
-      },
-    ],
-  },
-  {
-    name: 'Backend development',
-    skills: [
-      {
-        name: 'Node.js',
-        level: 8,
-      },
-      {
-        name: 'Flask',
-        level: 2,
-      },
-    ],
-  },
-  {
-    name: 'Game Development',
-    skills: [
-      {
-        name: 'Unity',
-        level: 8,
-      },
-      {
-        name: 'Unreal Engine',
-        level: 3,
-      },
+      {name: 'Visual Studio Code'},
+      {name: 'Claude Code'},
+      {name: 'Git'},
+      {name: 'GitHub'},
+      {name: 'Unix'},
+      {name: 'Microsoft Office'},
     ],
   },
 ];
@@ -164,14 +124,16 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Deepfake Powerpoint',
-    description: 'An ethical and technical study of deepfakes and their potential uses in an AI powered world.',
-    url: 'https://1drv.ms/p/s!AiMa9mgeBltTgZFb8MG1lrzWpXcYbg?e=PqcNPg',
+    title: 'Serie A Data Project',
+    description:
+      'Analyzed players in the Italian Serie A and English Premier League using Python, Web Scraping, Pandas, and Streamlit to create a data-driven report on the performance of individual players.',
+    url: 'https://github.com/PeterCruciata0903/Serie-A-Data-Project.git',
     image: porfolioImage1,
   },
   {
     title: 'Hunter Horror',
-    description: 'A first person horror game made in Unity. The game is inspired by theya classic indie horrors like Slender Man.',
+    description:
+      'A first person horror game made in Unity. The game is inspired by theya classic indie horrors like Slender Man.',
     url: 'https://github.com/PeterCruciata0903/HunterHorror',
     image: porfolioImage2,
   },
@@ -181,46 +143,63 @@ export const portfolioItems: PortfolioItem[] = [
     url: 'https://github.com/PeterCruciata0903/TechNotes',
     image: porfolioImage3,
   },
-
 ];
 
 /**
- * Resume section -- TODO: Standardize resume contact format or offer MDX
+ * Education
  */
 export const education: TimelineItem[] = [
   {
-    date: 'August 2015 - May 2020',
-    location: 'CUNY College of Staten Island',
-    title: 'Bachelor of Science in Medical Biology',
-    content: <p>Extensive knowledge of Health Sciences. Studied Biology, Chemistry and other advanced sciences. Skills in working in labratory enviornments dealing with dangerous chemicals, along with skills in dissection.</p>,
+    date: 'December 2022',
+    location: 'Staten Island, NY',
+    title: 'Bachelor of Science in Computer Science',
+    content: <p>City University of New York, College of Staten Island.</p>,
   },
   {
-    date: 'July 2020 - Present',
-    location: 'CUNY College of Staten Island',
-    title: 'Bachelor of Science in Computer Science',
-    content: <p>Learned various coding languages and created multiple projects in groups or solo. Understanding of computer architecture along with hardware functionality.</p>,
+    date: 'May 2020',
+    location: 'Staten Island, NY',
+    title: 'Bachelor of Science in Biology',
+    content: <p>City University of New York, College of Staten Island.</p>,
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2022 - May 2022',
-    location: 'CUNY College of Staten Island',
-    title: 'Lead Game Developer',
+    date: 'March 2023 - Present',
+    location: 'Millennium Management, LLC | New York, NY',
+    title: 'Operations Control Specialist',
     content: (
-      <p>
-        Led a small team in the development of an indie horror game. Worked with Unity and C# to create a game that allows a player to try and escape a maze while being hunted by a monster. Oversaw all phases of development from design to play testing.
-      </p>
-    ),
-  },
-  {
-    date: 'Feb 2022 - May 2022',
-    location: 'CUNY College of Staten Island',
-    title: 'SQL Developer',
-    content: (
-      <p>
-        Created a database in SQL to store information about a sports teams. The database contained information about teams, players, and games.
-      </p>
+      <ul className="ml-5 list-disc space-y-2">
+        <li>
+          Designed and developed a scalable option position-migration workflow as the sole developer, executing three
+          migrations of 20,000+ positions across 10 prime brokers with 99%+ accuracy and supporting billions of dollars
+          in firm-wide savings.
+        </li>
+        <li>
+          Built and managed a centralized market-data entitlement workflow across four internal trade systems,
+          identifying redundant entitlements, inactive accounts, and over-provisioned users to inform cost optimization.
+        </li>
+        <li>
+          Developed a Python and SQL workflow with a dynamic GUI for corporate-action processing, improving accuracy,
+          reducing manual errors, and saving more than five hours per week.
+        </li>
+        <li>
+          Owned the development of 20+ criteria-based reports for fixed-income stakeholders, improving reporting
+          accuracy, reducing trade breaks, and lowering high-risk items by 30%.
+        </li>
+        <li>
+          Managed developers building and maintaining a performance dashboard for senior management to monitor external
+          trading teams and identify opportunities to improve financial outcomes.
+        </li>
+        <li>
+          Led cross-functional implementation of T+1 trade-settlement requirements with internal technical teams, middle
+          office, and external brokers.
+        </li>
+        <li>
+          Used firm-provided AI tools to develop an email-intelligence workflow that classifies and prioritizes
+          operational activity.
+        </li>
+      </ul>
     ),
   },
 ];
@@ -255,17 +234,21 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'To any recruiters and employers, I am currently looking for a full time position as a security analyst. Feel free to reach out to me via email or LinkedIn.',
+  description: 'For professional inquiries, feel free to reach out by email, phone, or LinkedIn.',
   items: [
     {
       type: ContactType.Email,
-      text: 'Peter.Cruciata2@cix.csi.cuny.edu',
-      href: 'mailto:PeterCruciata',
+      text: 'pcruch@gmail.com',
+      href: 'mailto:pcruch@gmail.com',
+    },
+    {
+      type: ContactType.Phone,
+      text: '917-806-7776',
+      href: 'tel:+19178067776',
     },
     {
       type: ContactType.Location,
-      text: 'Staten Island, NY',
-      href: 'https://goo.gl/maps/xTdSEcEBwmsywGf97',
+      text: 'New York, NY',
     },
     {
       type: ContactType.LinkedIn,
