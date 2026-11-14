@@ -6,7 +6,7 @@ import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import heroImage from '../images/header-background.webp';
 import porfolioImage1 from '../images/portfolio/ITA-ENG.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
-import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
+import porfolioImage3 from '../images/portfolio/Pokemon-App.png';
 import testimonialImage from '../images/testimonial.webp';
 
 import {
@@ -138,9 +138,9 @@ export const portfolioItems: PortfolioItem[] = [
     image: porfolioImage2,
   },
   {
-    title: 'TechNotes',
-    description: 'A note taking app made in React Native.',
-    url: 'https://github.com/PeterCruciata0903/TechNotes',
+    title: 'Competitive Pokemon Ranking',
+    description: 'A data science project that ranks competitive Pokemon based on their performace at the World Championship. Using Python, Pandas, and Streamlit, I created a data-driven report on the performance of individual Pokemon. Data sourced from VGC History, images sourced from Pokemon Showdown.',
+    url: 'https://github.com/PeterCruciata0903/Pokemon_VGC_Analyzer',
     image: porfolioImage3,
   },
 ];
