@@ -127,7 +127,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: 'Serie A Data Project',
     description:
       'Analyzed players in the Italian Serie A and English Premier League using Python, Web Scraping, Pandas, and Streamlit to create a data-driven report on the performance of individual players.',
-    url: 'https://github.com/PeterCruciata0903/Serie-A-Data-Project.git',
+    url: 'https://github.com/PeterCruciata0903/Serie-A-Data-Project',
     image: porfolioImage1,
   },
   {

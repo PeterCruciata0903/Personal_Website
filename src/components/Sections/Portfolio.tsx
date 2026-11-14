@@ -27,13 +27,15 @@ export default Portfolio;
 const PortfolioCard: FC<{item: PortfolioItem}> = memo(({item: {url, title, description, image}}) => (
   <article className="w-full overflow-hidden rounded-xl bg-neutral-900 shadow-lg shadow-black/30 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
     <div className="group relative aspect-[16/10] overflow-hidden">
-      <Image
-        alt={title}
-        className="object-cover transition-transform duration-300 group-hover:scale-105"
-        fill
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        src={image}
-      />
+      <a href={url} rel="noreferrer" target="_blank">
+        <Image
+          alt={title}
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          src={image}
+        />
+      </a>
     </div>
     <div className="flex h-full flex-col gap-y-3 p-5">
       <h3 className="text-lg font-bold text-white">{title}</h3>
